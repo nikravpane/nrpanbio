@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Portfolio - IT & Technical Leader</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons for aesthetic vectors -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic vectors --><script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Configure Tailwind to use Inter font */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
@@ -17,9 +15,18 @@
             color: #c9d1d9; /* Light gray text */
             min-height: 100vh;
         }
-        .container-custom {
+        /* Custom scrollbar for subtle aesthetic */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0d1117; }
+        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #444c56; }
+
+        /* Custom container for main content */
+        .main-container {
             max-width: 1100px;
         }
+
+        /* Section Title Underline */
         .section-title {
             position: relative;
             padding-bottom: 0.5rem;
@@ -35,89 +42,119 @@
             background-color: #38a169; /* Green accent */
             border-radius: 9999px;
         }
-        /* Custom scrollbar for subtle aesthetic */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0d1117; }
-        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #444c56; }
     </style>
 </head>
 <body class="antialiased">
 
-    <div class="container-custom mx-auto p-4 sm:p-8">
-
-        <!-- HEADER / HERO SECTION -->
-        <header class="text-center py-12 mb-10 bg-[#161b22] rounded-xl shadow-2xl border border-[#30363d]">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-[#58a6ff] tracking-tight">
-                <!-- EDIT: Your Full Name -->
-                [Your Name Here]
-            </h1>
-            <p class="text-xl mt-3 text-[#c9d1d9] font-light">
-                IT Project & Product Leader | Technical Consultant | Scrum Master
-            </p>
-            <div class="mt-6 flex justify-center space-x-4">
-                <!-- EDIT: Replace with your GitHub URL -->
-                <a href="https://github.com/[your-username]" target="_blank" class="flex items-center space-x-2 text-[#8b949e] hover:text-[#58a6ff] transition">
-                    <i data-lucide="github" class="w-5 h-5"></i>
-                    <span class="text-sm">GitHub</span>
+    <!-- 1. FIXED SIDE NAVIGATION PANEL (Desktop View) --><nav id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-[#161b22] border-r border-[#30363d] z-10 hidden lg:block p-6">
+        <div class="mb-10 pt-4">
+            <h3 class="text-lg font-bold text-[#58a6ff]">Portfolio Menu</h3>
+            <p class="text-xs text-[#8b949e]">Navigation</p>
+        </div>
+        <ul class="space-y-4">
+            <li>
+                <a href="#top" class="flex items-center space-x-3 text-[#c9d1d9] hover:text-[#58a6ff] hover:bg-[#30363d] p-2 rounded-md transition duration-150">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                    <span>Home (Summary)</span>
                 </a>
-                <!-- EDIT: Replace with your LinkedIn URL -->
-                <a href="[Your LinkedIn URL]" target="_blank" class="flex items-center space-x-2 text-[#8b949e] hover:text-[#58a6ff] transition">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    <span class="text-sm">LinkedIn</span>
+            </li>
+            <li>
+                <!-- NEW YOUTUBE LINK ADDED HERE -->
+                <a href="[Your YouTube Channel URL]" target="_blank" class="flex items-center space-x-3 text-[#c9d1d9] hover:text-[#58a6ff] hover:bg-[#30363d] p-2 rounded-md transition duration-150">
+                    <i data-lucide="youtube" class="w-5 h-5"></i>
+                    <span>YouTube Channel</span>
                 </a>
-                <!-- EDIT: Replace with your Email Address -->
-                <a href="mailto:[Your Email]" class="flex items-center space-x-2 text-[#8b949e] hover:text-[#58a6ff] transition">
+            </li>
+            <li>
+                <a href="#projects" class="flex items-center space-x-3 text-[#c9d1d9] hover:text-[#58a6ff] hover:bg-[#30363d] p-2 rounded-md transition duration-150">
+                    <i data-lucide="folder-git" class="w-5 h-5"></i>
+                    <span>GitHub Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="#skills" class="flex items-center space-x-3 text-[#c9d1d9] hover:text-[#58a6ff] hover:bg-[#30363d] p-2 rounded-md transition duration-150">
+                    <i data-lucide="briefcase" class="w-5 h-5"></i>
+                    <span>Skills & Expertise</span>
+                </a>
+            </li>
+            <li>
+                <a href="#contact" class="flex items-center space-x-3 text-[#c9d1d9] hover:text-[#58a6ff] hover:bg-[#30363d] p-2 rounded-md transition duration-150">
                     <i data-lucide="mail" class="w-5 h-5"></i>
-                    <span class="text-sm">Contact</span>
+                    <span>Contact</span>
                 </a>
-            </div>
-        </header>
+            </li>
+        </ul>
+    </nav>
 
-        <!-- ABOUT / SUMMARY SECTION -->
-        <section class="mb-12 p-6 bg-[#161b22] rounded-xl border border-[#30363d]">
-            <h2 class="text-2xl font-semibold section-title">Professional Summary</h2>
-            <p class="text-[#8b949e] leading-relaxed">
-                   <ul class="list-disc ml-5 space-y-2">
-                    <li>Certified SAFe Scrum Master with 5+ years of experience facilitating multiple Agile pods and scaled Agile frameworks utilizing Kanban and Scrum for Records Management Modernization & Digital transformation projects within banking, and insurance domains for clients such as TD and BMO.</li>
-                    <li>Skilled in PMO governance, Agile delivery, Communities of Practice, and end-to-end SDLC execution, with hands-on exposure to cloud (AWS/Azure), DevOps environments, and IT service management.</li>
-                    <li>Successfully delivered 30+ projects across IT, cloud, data infrastructure, and data migration programs, driving continuous improvement, transparency, and predictable delivery.</li>
-                    <li>Proficient in Jira, Confluence, MS Project, Word, Excel and PowerBi for sprint planning, backlog management, and data-driven reporting.</li>
-                </ul>
-                <p class="mt-4">
-                    My portfolio demonstrates my hybrid skill set: robust planning, governance, and hands-on coding (Python, Web Dev) to accelerate outcomes.
+    <!-- 2. MAIN CONTENT AREA (Pushed over by the sidebar on large screens) --><main class="lg:ml-64 p-4 sm:p-8">
+        <div class="main-container mx-auto">
+            
+            <!-- HEADER / HERO SECTION --><header class="text-center py-12 mb-10 bg-[#161b22] rounded-xl shadow-2xl border border-[#30363d]" id="top">
+                <!-- Profile Picture Added Here --><img src="C:\Users\Tanu local admin\Documents\GitHub\nrpanbio\Media\nikhil 2025_2.jpg" alt="Your Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[#30363d] shadow-lg">
+                
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-[#58a6ff] tracking-tight">
+                    <!-- EDIT: Your Full Name -->[Your Name Here]
+                </h1>
+                <p class="text-xl mt-3 text-[#c9d1d9] font-light">
+                    IT Project & Product Leader | Technical Consultant | Scrum Master
                 </p>
-            <div class="mt-4 flex flex-wrap gap-3">
-                <!-- EDIT: Customize these skill tags if needed -->
-                <span class="px-3 py-1 text-xs font-medium bg-green-700/30 text-green-300 rounded-full">Scrum/Agile</span>
-                <span class="px-3 py-1 text-xs font-medium bg-blue-700/30 text-blue-300 rounded-full">Project Governance</span>
-                <span class="px-3 py-1 text-xs font-medium bg-red-700/30 text-red-300 rounded-full">Cathlabs/Med-Tech</span>
-                <span class="px-3 py-1 text-xs font-medium bg-yellow-700/30 text-yellow-300 rounded-full">Python/Web Dev</span>
-                <span class="px-3 py-1 text-xs font-medium bg-purple-700/30 text-purple-300 rounded-full">User-Centric Design</span>
-            </div>
-        </section>
-
-        <!-- GITHUB PORTFOLIO SECTION -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold section-title">GitHub Projects</h2>
-            <div id="repo-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Repositories will be injected here -->
-                <div id="loading-spinner" class="md:col-span-2 text-center py-10">
-                    <svg class="animate-spin h-8 w-8 text-[#58a6ff] mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    <p class="text-[#8b949e] mt-3">Loading projects from GitHub...</p>
+                <div class="mt-6 flex justify-center space-x-4">
+                    <!-- EDIT: Replace with your GitHub URL --><a href="https://github.com/[your-username]" target="_blank" class="flex items-center space-x-2 text-[#8b949e] hover:text-[#58a6ff] transition">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                        <span class="text-sm">GitHub</span>
+                    </a>
+                    <!-- EDIT: Replace with your LinkedIn URL --><a href="[Your LinkedIn URL]" target="_blank" class="flex items-center space-x-2 text-[#8b949e] hover:text-[#58a6ff] transition">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        <span class="text-sm">LinkedIn</span>
+                    </a>
+                    <!-- EDIT: Replace with your Email Address --><a href="mailto:[Your Email]" id="contact" class="flex items-center space-x-2 text-[#8b949e] hover:text-[#58a6ff] transition">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        <span class="text-sm">Contact</span>
+                    </a>
                 </div>
-            </div>
-        </section>
+            </header>
 
-        <!-- FOOTER -->
-        <footer class="text-center mt-10 pt-6 border-t border-[#30363d] text-sm text-[#8b949e]">
-            Portfolio created with a custom template and GitHub API. All rights reserved.
-        </footer>
+            <!-- ABOUT / SUMMARY SECTION --><section class="mb-12 p-6 bg-[#161b22] rounded-xl border border-[#30363d]" id="summary">
+                <h2 class="text-2xl font-semibold section-title">Professional Summary</h2>
+                <div class="text-[#8b949e] leading-relaxed">
+                    <!-- SUMMARY CONTENT START --><ul class="list-disc ml-5 space-y-2">
+                        <li>Certified SAFe Scrum Master with 5+ years of experience facilitating multiple Agile pods and scaled Agile frameworks utilizing Kanban and Scrum for Records Management Modernization & Digital transformation projects within banking, and insurance domains for clients such as TD and BMO.</li>
+                        <li>Skilled in PMO governance, Agile delivery, Communities of Practice, and end-to-end SDLC execution, with hands-on exposure to cloud (AWS/Azure), DevOps environments, and IT service management.</li>
+                        <li>Successfully delivered 30+ projects across IT, cloud, data infrastructure, and data migration programs, driving continuous improvement, transparency, and predictable delivery.</li>
+                        <li>Proficient in Jira, Confluence, MS Project, Word, Excel and PowerBi for sprint planning, backlog management, and data-driven reporting.</li>
+                    </ul>
+                    <p class="mt-4">
+                        My portfolio demonstrates my hybrid skill set: robust planning, governance, and hands-on coding (Python, Web Dev) to accelerate outcomes.
+                    </p>
+                    <!-- SUMMARY CONTENT END --></div>
+                <div class="mt-4 flex flex-wrap gap-3" id="skills">
+                    <!-- EDIT: Customize these skill tags if needed --><span class="px-3 py-1 text-xs font-medium bg-green-700/30 text-green-300 rounded-full">Scrum/Agile</span>
+                    <span class="px-3 py-1 text-xs font-medium bg-blue-700/30 text-blue-300 rounded-full">Project Management & Governance</span>
+                    <span class="px-3 py-1 text-xs font-medium bg-red-700/30 text-red-300 rounded-full">Data Analysis</span>
+                    <span class="px-3 py-1 text-xs font-medium bg-yellow-700/30 text-yellow-300 rounded-full">Python/Web Dev</span>
+                    <span class="px-3 py-1 text-xs font-medium bg-purple-700/30 text-purple-300 rounded-full">User-Centric Design</span>
+                </div>
+            </section>
 
-    </div>
+            <!-- GITHUB PORTFOLIO SECTION --><section class="mb-12" id="projects">
+                <h2 class="text-2xl font-semibold section-title">GitHub Projects</h2>
+                <div id="repo-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Repositories will be injected here --><div id="loading-spinner" class="md:col-span-2 text-center py-10">
+                        <svg class="animate-spin h-8 w-8 text-[#58a6ff] mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <p class="text-[#8b949e] mt-3">Loading projects from GitHub...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER --><footer class="text-center mt-10 pt-6 border-t border-[#30363d] text-sm text-[#8b949e]">
+                Portfolio created with a custom template and GitHub API. All rights reserved.
+            </footer>
+        </div>
+    </main>
+
 
     <script>
         // Initialize Lucide Icons
